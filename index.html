@@ -2,28 +2,48 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Weatherly</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Weatherly — Weather App</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
+  <div class="bg-blobs" aria-hidden="true">
+    <span class="blob b1"></span>
+    <span class="blob b2"></span>
+    <span class="blob b3"></span>
+  </div>
+
   <div class="app">
     <header class="topbar">
-      <h1 class="brand">Weatherly</h1>
+      <div class="brand">
+        <div class="logo" aria-hidden="true">☁️</div>
+        <div>
+          <h1>Weatherly</h1>
+          <p>High • Low • Forecast • Humidity</p>
+        </div>
+      </div>
 
-      <form id="search-form" class="search">
-        <input id="location-input" type="text" placeholder="City or ZIP" />
-        <button type="submit">Search</button>
+      <form id="search-form" class="search" autocomplete="off">
+        <input id="location-input" type="text" placeholder="Search city (e.g., United States) or ZIP (e.g., 19901)" />
+        <button id="search-btn" type="submit" class="btn primary">Search</button>
       </form>
     </header>
 
     <main>
-      <section class="card">
+      <section class="card current">
         <h2 id="place-name">Enter a location</h2>
-        <p id="message">Ready.</p>
+        <p id="message" class="message">Ready.</p>
       </section>
     </main>
+
+    <footer class="footer">
+      <span>Data by OpenWeather</span>
+    </footer>
   </div>
 
   <script src="app.js"></script>
