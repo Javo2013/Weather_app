@@ -3,18 +3,33 @@ const input = document.getElementById("location-input");
 
 const placeName = document.getElementById("place-name");
 const placeSub = document.getElementById("place-sub");
-
 const messageEl = document.getElementById("message");
 
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
-  const value = input.value.trim();
+function showMessage(text) {
+  messageEl.textContent = text;
+}
+
+function runSearch(raw) {
+  const value = raw.trim();
   if (!value) {
-    messageEl.textContent = "Please enter a city or ZIP.";
+    showMessage("Please enter a city or 5-digit ZIP code.");
+    input.focus();
     return;
   }
 
   placeName.textContent = value;
-  placeSub.textContent = "Next: connect OpenWeather.";
-  messageEl.textContent = "UI ready. Waiting on API call.";
+  placeSub.textContent = "Connecting to OpenWeather next.";
+  showMessage("Looks good. API call comes next.");
+}
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  runSearch(input.value);
+});
+
+
+input.addEventListener("keydown", (e) => {
+  if (e.key === "Enter") {
+  
+  }
 });
