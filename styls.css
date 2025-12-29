@@ -1,0 +1,54 @@
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #0b1020;
+  color: #fff;
+}
+
+.app {
+  max-width: 900px;
+  margin: 24px auto;
+  padding: 0 16px;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.search {
+  display: flex;
+  gap: 10px;
+  width: min(520px, 100%);
+}
+
+.search input {
+  flex: 1;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #2a3557;
+  background: #121a33;
+  color: #fff;
+  outline: none;
+}
+
+.search button {
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #2a3557;
+  background: #1b2a5a;
+  color: #fff;
+  cursor: pointer;
+}
+
+.card {
+  margin-top: 16px;
+  border: 1px solid #2a3557;
+  border-radius: 14px;
+  padding: 16px;
+  background: rgba(255,255,255,0.04);
+}

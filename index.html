@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weatherly</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <div class="app">
+    <header class="topbar">
+      <h1 class="brand">Weatherly</h1>
+
+      <form id="search-form" class="search">
+        <input id="location-input" type="text" placeholder="City or ZIP" />
+        <button type="submit">Search</button>
+      </form>
+    </header>
+
+    <main>
+      <section class="card">
+        <h2 id="place-name">Enter a location</h2>
+        <p id="message">Ready.</p>
+      </section>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
