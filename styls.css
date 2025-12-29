@@ -134,3 +134,60 @@ body{
   font-size: .9rem;
 }
 .dot{ opacity:.5; }
+
+.current-top{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap: 12px;
+  flex-wrap:wrap;
+}
+.place h2{ margin:0; font-size: 1.35rem; letter-spacing: -0.02em; }
+.place p{ margin: 6px 0 0; color: var(--muted); font-size: .95rem; }
+
+.status{
+  display:flex;
+  align-items:center;
+  gap: 10px;
+}
+.icon{
+  width:62px;
+  height:62px;
+  filter: drop-shadow(0 10px 18px rgba(0,0,0,.25));
+}
+.condition{ font-weight: 700; }
+.temp{
+  font-size: 2.05rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-top: 2px;
+}
+
+.metrics{
+  margin-top: 16px;
+  display:grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+@media (max-width: 520px){
+  .metrics{ grid-template-columns: repeat(2, 1fr); }
+}
+.metric{
+  background: rgba(0,0,0,.18);
+  border: 1px solid rgba(255,255,255,.10);
+  border-radius: 14px;
+  padding: 12px;
+}
+.metric .label{ color: var(--muted2); font-size: .85rem; }
+.metric .value{ font-weight: 800; font-size: 1.1rem; margin-top: 6px; }
+
+.bar{
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255,255,255,.12);
+  display:flex;
+  justify-content:space-between;
+  gap: 10px;
+  flex-wrap:wrap;
+}
+.updated{ color: var(--muted2); font-size: .9rem; }
