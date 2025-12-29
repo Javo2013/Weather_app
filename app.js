@@ -44,7 +44,7 @@ function cap(s) {
 }
 
 function setLoading(on) {
-  messageEl.textContent = on ? "Loading weather..." : "Ready when you are.";
+  messageEl.textContent = on ? "Loading weather..." : messageEl.textContent;
 }
 
 async function fetchJson(url, params) {
@@ -204,9 +204,18 @@ async function runSearch(raw) {
 
     messageEl.textContent = "Weather loaded successfully.";
   } catch (err) {
+  const msg = (err.message || "").toLowerCase();
+
+  if (msg.includes("invalid api key")) {
+    messageEl.textContent = "Your API key is invalid or not activated yet.";
+  } else if (msg.includes("city not found")) {
+    messageEl.textContent = "Location not found. Try a different city or ZIP.";
+  } else {
     messageEl.textContent = err.message || "Could not load weather.";
-    forecastGrid.innerHTML = "";
-  } finally {
+  }
+
+  forecastGrid.innerHTML = "";
+} finally {
     setLoading(false);
   }
 }
